@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menu Dịch Vụ — Gội Đầu Thư Giãn</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1F2B22;
+    --paper:#F4EEDC;
+    --paper-soft:#ECE4CC;
+    --charcoal:#241F17;
+    --gold:#C98A2B;
+    --gold-soft:#E9C583;
+    --jade:#4F7A5B;
+    --clay:#B5563A;
+    --line:rgba(36,31,23,0.18);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:#DDD6C2;
+    font-family:'Be Vietnam Pro', sans-serif;
+    color:var(--charcoal);
+    display:flex; justify-content:center; padding:40px 16px;
+  }
+  .page{
+    width:210mm; min-height:297mm; background:var(--paper);
+    box-shadow:0 20px 60px rgba(0,0,0,0.18);
+    padding:22mm 18mm; position:relative; overflow:hidden;
+  }
+  .leaf{ position:absolute; opacity:0.08; stroke:var(--ink); fill:none; stroke-width:1.2;}
+  .leaf.tl{ top:-30px; left:-40px; width:220px; height:220px;}
+  .leaf.br{ bottom:-30px; right:-40px; width:220px; height:220px; transform:rotate(180deg);}
+
+  header{ text-align:center; margin-bottom:8mm; position:relative;}
+  .eyebrow{ font-size:11px; letter-spacing:0.22em; text-transform:uppercase; color:var(--jade); font-weight:700; margin-bottom:10px;}
+  h1{ font-family:'Fraunces', serif; font-weight:600; font-size:38px; color:var(--ink); line-height:1.1;}
+  h1 em{ font-style:italic; color:var(--gold);}
+  .sub{ font-size:13px; color:var(--charcoal); opacity:0.65; margin-top:8px;}
+  .rule{ width:60px; height:2px; background:var(--gold); margin:14px auto 0;}
+
+  .intro-price{
+    text-align:center; margin:6mm 0 10mm; font-family:'IBM Plex Mono'; font-size:12px;
+    color:var(--charcoal); opacity:0.75;
+  }
+  .intro-price b{ color:var(--clay); font-size:14px;}
+
+  .menu-section{ margin-bottom:9mm;}
+  .menu-section .head{ display:flex; align-items:baseline; gap:10px; margin-bottom:4mm;}
+  .menu-section .num{ font-family:'IBM Plex Mono'; font-size:11px; color:var(--gold); font-weight:600;}
+  .menu-section h2{ font-family:'Fraunces'; font-weight:600; font-size:19px; color:var(--ink);}
+  .menu-section .head::after{ content:""; flex:1; height:1px; background:var(--line); margin-left:6px;}
+
+  .item{
+    display:grid; grid-template-columns:1fr auto; gap:6px 16px; padding:8px 0;
+    border-bottom:1px dotted var(--line); align-items:baseline;
+  }
+  .item .name{ font-weight:600; font-size:14.5px; color:var(--ink);}
+  .item .time{ font-family:'IBM Plex Mono'; font-size:10.5px; color:var(--jade); font-weight:500; margin-left:8px;}
+  .item .desc{ grid-column:1/2; font-size:11.5px; opacity:0.62; margin-top:-2px;}
+  .item .price{ font-family:'IBM Plex Mono'; font-size:15px; font-weight:500; color:var(--gold); white-space:nowrap;}
+  .item.featured .name{ color:var(--clay);}
+  .item.featured .price{ color:var(--clay);}
+
+  .combo-box{
+    margin-top:4mm; background:var(--ink); color:var(--paper); border-radius:14px; padding:16px 20px;
+    display:flex; justify-content:space-between; align-items:center; gap:14px; flex-wrap:wrap;
+  }
+  .combo-box .t{ font-family:'Fraunces'; font-weight:600; font-size:15px;}
+  .combo-box .d{ font-size:11.5px; opacity:0.75; margin-top:3px;}
+  .combo-box .p{ font-family:'IBM Plex Mono'; font-size:13px; color:var(--gold-soft); font-weight:600;}
+
+  .herb-note{
+    margin-top:10mm; padding:14px 18px; border:1px solid var(--line); border-radius:12px;
+    font-size:11px; text-align:center; opacity:0.7; line-height:1.6;
+  }
+  .herb-note b{ color:var(--jade); opacity:1;}
+
+  footer{
+    margin-top:12mm; text-align:center; padding-top:8mm; border-top:1px solid var(--line);
+  }
+  footer .brand{ font-family:'Fraunces'; font-weight:600; font-size:15px; color:var(--ink);}
+  footer .contact{ font-size:11px; opacity:0.6; margin-top:6px; font-family:'IBM Plex Mono';}
+
+  .print-hint{
+    max-width:210mm; margin:14px auto 0; text-align:center; font-size:12px; color:var(--charcoal); opacity:0.55;
+  }
+  @media print{
+    body{ padding:0; background:white;}
+    .page{ box-shadow:none; width:auto; min-height:auto;}
+    .print-hint{ display:none;}
+  }
+</style>
+</head>
+<body>
+
+<div>
+<div class="page">
+  <svg class="leaf tl" viewBox="0 0 100 100"><path d="M10 90 C10 50 40 10 90 10 C70 30 55 55 40 90 C30 60 20 55 10 90 Z"/></svg>
+  <svg class="leaf br" viewBox="0 0 100 100"><path d="M10 90 C10 50 40 10 90 10 C70 30 55 55 40 90 C30 60 20 55 10 90 Z"/></svg>
+
+  <header>
+    <div class="eyebrow">Thực đơn dịch vụ</div>
+    <h1>Gội Đầu <em>Thư Giãn</em></h1>
+    <p class="sub">Không gian riêng · Nước thảo mộc ấm · Giữa lòng Quận 1</p>
+    <div class="rule"></div>
+  </header>
+
+  <p class="intro-price">Trải nghiệm bắt đầu chỉ từ <b>79.000đ</b></p>
+
+  <div class="menu-section">
+    <div class="head"><span class="num">01</span><h2>Gội đầu</h2></div>
+
+    <div class="item featured">
+      <div>
+        <span class="name">Gội đầu thư giãn cơ bản</span>
+        <span class="time">30 phút</span>
+        <div class="desc">Gội sạch da đầu, massage vai gáy nhẹ nhàng</div>
+      </div>
+      <div class="price">79.000đ</div>
+    </div>
+
+    <div class="item">
+      <div>
+        <span class="name">Gội đầu thảo mộc</span>
+        <span class="time">45 phút</span>
+        <div class="desc">Bồ kết · hương nhu · sả · vỏ bưởi — theo công thức dân gian</div>
+      </div>
+      <div class="price">129.000–149.000đ</div>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <div class="head"><span class="num">02</span><h2>Chăm sóc thêm</h2></div>
+
+    <div class="item">
+      <div>
+        <span class="name">Gội thư giãn + Đắp mặt nạ</span>
+        <span class="time">45–50 phút</span>
+        <div class="desc">Đắp mặt nạ dưỡng da ngay trong lúc ủ tóc</div>
+      </div>
+      <div class="price">149.000–179.000đ</div>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <div class="head"><span class="num">03</span><h2>Trọn gói</h2></div>
+
+    <div class="combo-box">
+      <div>
+        <div class="t">Combo đầy đủ</div>
+        <div class="d">Gội thảo mộc · Đắp mặt nạ · Massage vai gáy chuyên sâu · 60 phút</div>
+      </div>
+      <div class="p">199.000–249.000đ</div>
+    </div>
+  </div>
+
+  <div class="menu-section">
+    <div class="head"><span class="num">04</span><h2>Gói khách quen</h2></div>
+
+    <div class="item">
+      <div>
+        <span class="name">Gói tháng — 8 lượt</span>
+        <span class="time">chọn combo bất kỳ</span>
+        <div class="desc">Dành cho khách ghé thường xuyên giờ nghỉ trưa hoặc sau giờ làm</div>
+      </div>
+      <div class="price">Giảm 15–20%</div>
+    </div>
+  </div>
+
+  <div class="herb-note">
+    Tất cả nguyên liệu thảo mộc được nấu tươi mỗi ngày từ <b>bồ kết, hương nhu, sả và vỏ bưởi</b> —
+    công thức gội đầu truyền thống của người Việt.
+  </div>
+
+  <footer>
+    <div class="brand">Gội Đầu Thư Giãn</div>
+    <div class="contact">Quận 1, TPHCM &nbsp;·&nbsp; Đặt lịch qua Zalo</div>
+  </footer>
+</div>
+</div>
+
+<p class="print-hint">Mở file này trong trình duyệt và dùng Ctrl/Cmd + P để in khổ A4.</p>
+
+</body>
+</html>
